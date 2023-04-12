@@ -1,0 +1,27 @@
+<div class="mb-3">
+  <label for="firstNumber" class="form-label">First Number</label>
+  <input #firstNumber
+         type="number" class="form-control" id="firstNumber">
+</div>
+<div class="mb-3">
+  <label for="secondNumber" class="form-label">Second Number</label>
+  <input #secondNumber
+         type="number" class="form-control" id="secondNumber">
+  <div class="form-text" style="color: red">{{error}}</div>
+</div>
+<div class="mb-3">
+  <h4 class="form-check-label">Result :{{result}} </h4>
+</div>
+<button (click)="calculator('+',firstNumber.value,secondNumber.value)"
+        type="button" class="btn btn-primary">Sum
+</button>
+<button (click)="calculator('-',firstNumber.value,secondNumber.value)"
+        type="button" class="btn btn-primary">Subtract
+</button>
+<button (click)="calculator('*',firstNumber.value,secondNumber.value)"
+        type="button" class="btn btn-primary">Multiply
+</button>
+<button (click)="calculator('/',firstNumber.value,secondNumber.value)"
+        type="button" class="btn btn-primary">Division
+</button>
+

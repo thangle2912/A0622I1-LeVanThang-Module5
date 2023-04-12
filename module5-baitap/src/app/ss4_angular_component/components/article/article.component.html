@@ -1,0 +1,18 @@
+<div>
+  <table class="table" >
+    <thead>
+    <tr>
+      <th>No.</th>
+      <th>Title</th>
+      <th>URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let article of articleList;index as i">
+      <td scope="row">{{i +1}}</td>
+      <td>{{article.title | titlecase}}</td>
+      <td>{{article.url}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
