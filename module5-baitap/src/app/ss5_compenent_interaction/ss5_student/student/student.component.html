@@ -1,0 +1,21 @@
+<div>
+  <table class="table" >
+    <thead>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Class</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of studentList;index as i" (click)="clickStudent(student)">
+      <td scope="row">{{i +1}}</td>
+      <td>{{student.name | titlecase}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.class}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <app-student-detail [student]="studentDetail"></app-student-detail>
+</div>

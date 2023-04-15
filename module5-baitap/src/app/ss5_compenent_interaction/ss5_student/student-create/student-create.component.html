@@ -1,0 +1,17 @@
+<div class="input-group">
+  <label for="name">Name</label>
+  <input #name type="text" class="form-control" name="" id="name">
+  <small id="1" class="form-text text-muted">Help text</small>
+</div>
+<div class="input-group">
+  <label for="age">Age</label>
+  <input #age type="text" class="form-control" name="" id="age">
+  <small id="2" class="form-text text-muted">Help text</small>
+</div>
+<div class="input-group">
+  <label for="class">Class</label>
+  <input #class type="text" class="form-control" name="" id="class">
+  <small id="3" class="form-text text-muted">Help text</small>
+</div>
+
+<button type="button" class="btn btn-success" (click)="addStudent(name.value,age.value,class.value)">Add</button>
