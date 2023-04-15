@@ -9,6 +9,10 @@ import {FormsModule} from '@angular/forms';
 import { ArticleComponent } from './ss4_angular_component/components/article/article.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
+import { Ss5CountdownComponent } from './ss5_compenent_interaction/ss5-countdown/ss5-countdown.component';
+import { StudentComponent } from './ss5_compenent_interaction/ss5_student/student/student.component';
+import { StudentDetailComponent } from './ss5_compenent_interaction/ss5_student/student-detail/student-detail.component';
+import { StudentCreateComponent } from './ss5_compenent_interaction/ss5_student/student-create/student-create.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import {NavbarComponent} from './components/navbar/navbar.component';
     Ss3ColorPickerComponent,
     ArticleComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    Ss5CountdownComponent,
+    StudentComponent,
+    StudentDetailComponent,
+    StudentCreateComponent
   ],
   imports: [
     BrowserModule,
