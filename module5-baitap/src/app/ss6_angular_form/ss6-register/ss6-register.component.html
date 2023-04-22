@@ -1,0 +1,92 @@
+<div>
+  <h1 style="text-align: center">Register</h1>
+  <div>
+    <form novalidate [formGroup]="rfRegister">
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="email" formControlName="email">
+          <p class="text-danger padding-5"
+             *ngIf="rfRegister.controls.email?.touched && rfRegister.controls.email?.errors?.required">
+            Bắt buộc nhập.
+          </p>
+          <p class="text-danger padding-5"
+             *ngIf="rfRegister.controls.email?.touched && rfRegister.controls.email?.errors?.pattern">
+            Email sai định dạng
+          </p>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="password" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="password" formControlName="password" [(ngModel)]="password">
+          <p class="text-danger padding-5" *ngIf="rfRegister.controls.password?.touched && rfRegister.controls.password?.errors?.required">Bắt buộc nhập.</p>
+          <p class="text-danger padding-5" *ngIf="rfRegister.controls.password?.touched && rfRegister.controls.password?.errors?.minLength">Password nhiều hơn 5 ký tự</p>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" >
+          <p class="text-danger padding-5" *ngIf="rfRegister.controls.confirmPassword?.touched && rfRegister.controls.confirmPassword?.errors?.required">Bắt buộc nhập.</p>
+          <p class="text-danger padding-5" *ngIf="rfRegister.controls.confirmPassword?.touched && rfRegister.controls.confirmPassword?.errors?.minLength">Confirm Password nhiều hơn 5 ký tự</p>
+          <p class="text-danger padding-5" *ngIf="rfRegister.controls.confirmPassword?.touched && rfRegister.errors?.passwordNotMatch">Mật khẩu không trùng nhau</p>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="country" class="col-sm-2 col-form-label">Country</label>
+        <div class="col-sm-10">
+          <select class="form-select" id="country" formControlName="country">
+
+            <option selected>Select one</option>
+            <option *ngFor="let countr of countries">{{countr}}</option>
+          </select>
+
+          <p class="text-danger padding-5"
+             *ngIf="rfRegister.controls.country?.touched && rfRegister.controls.country?.errors?.required">
+            Bắt buộc chọn.
+          </p>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="age" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="age" formControlName="age">
+          <p class="text-danger padding-5"
+             *ngIf="rfRegister.controls.age?.touched && rfRegister.controls.age?.errors?.required">
+            Bắt buộc nhập.
+          </p>
+          <p class="text-danger padding-5"
+             *ngIf="rfRegister.controls.age?.touched && rfRegister.controls.age?.errors?.invalidAge">
+            Phải lớn hơn 18 tuổi
+          </p>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label  class="col-sm-2 col-form-label">Gender</label>
+        <div class="col-sm-10">
+          <div class="form-check form-check-inline" *ngFor="let gender of genderList ">
+            <input class="form-check-input" name="genderCheckbox" type="radio" id="{{gender}}" value="{{gender}}">
+            <label class="form-check-label" for="{{gender}}">{{gender}}</label>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="phoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+          <p class="text-danger padding-5"
+             *ngIf="rfRegister.controls.phoneNumber?.touched && rfRegister.controls.phoneNumber?.errors?.required">
+            Bắt buộc nhập.
+          </p>
+          <p class="text-danger padding-5"
+             *ngIf="rfRegister.controls.phoneNumber?.touched && rfRegister.controls.phoneNumber?.errors?.pattern">
+            Số điện thoại sai định dạng
+          </p>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+

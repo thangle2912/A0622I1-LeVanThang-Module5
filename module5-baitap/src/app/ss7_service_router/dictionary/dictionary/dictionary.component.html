@@ -1,0 +1,19 @@
+<div>
+  <table class="table" >
+    <thead>
+    <tr>
+      <th>No.</th>
+      <th>Word</th>
+      <th>Detail</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let word of wordList;index as i">
+      <td scope="row">{{i +1}}</td>
+      <td>{{word.word | titlecase}}</td>
+      <td><a routerLink="detail/{{word.id}}">Detail</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
