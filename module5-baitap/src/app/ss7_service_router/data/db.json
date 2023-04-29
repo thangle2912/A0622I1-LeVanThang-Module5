@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "name": "IPhone 121",
+      "price": 2400000,
+      "description": "New",
+      "id": 1,
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 4,
+      "name": "IPhone 8",
+      "price": 7540000,
+      "description": "98%",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    },
+    {
+      "id": 5,
+      "name": "IPhone 11 Pro",
+      "price": 1895000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      }
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 2,
+      "name": "Xe máy"
+    },
+    {
+      "id": 3,
+      "name": "Ô tô"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+<div class="container">
+  <button type="button" class="btn btn-link" routerLink="/facility">Quay lại</button>
+  <div style="text-align: center">
+    <h1>Cập nhật dịch vụ</h1>
+  </div>
+  <form novalidate [formGroup]="rfProduct" *ngIf="rfProduct" (ngSubmit)="editProduct()">
+    <div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên sản phẩm</label>
+          <input type="text"  class="form-control" id="name" formControlName="name" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="price" class="form-label">Giá cả</label>
+          <input type="number"  class="form-control" id="price" formControlName="price" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="description" class="form-label">Mô tả</label>
+          <input type="text" class="form-control" id="description" formControlName="description" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button [disabled]="rfProduct.invalid" type="submit" class="btn btn-primary">Cập nhật
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

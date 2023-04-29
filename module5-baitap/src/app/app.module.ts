@@ -1,23 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { Ss3CalculatorComponent } from './ss3_angular_overview/ss3-calculator/ss3-calculator.component';
-import { Ss3ColorPickerComponent } from './ss3_angular_overview/ss3-color-picker/ss3-color-picker.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {Ss3CalculatorComponent} from './ss3_angular_overview/ss3-calculator/ss3-calculator.component';
+import {Ss3ColorPickerComponent} from './ss3_angular_overview/ss3-color-picker/ss3-color-picker.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { ArticleComponent } from './ss4_angular_component/components/article/article.component';
+import {ArticleComponent} from './ss4_angular_component/components/article/article.component';
 import {FooterComponent} from './components/footer/footer.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
-import { Ss5CountdownComponent } from './ss5_compenent_interaction/ss5-countdown/ss5-countdown.component';
-import { StudentComponent } from './ss5_compenent_interaction/ss5_student/student/student.component';
-import { StudentDetailComponent } from './ss5_compenent_interaction/ss5_student/student-detail/student-detail.component';
-import { StudentCreateComponent } from './ss5_compenent_interaction/ss5_student/student-create/student-create.component';
-import { Ss6RegisterComponent } from './ss6_angular_form/ss6-register/ss6-register.component';
-import { DictionaryComponent } from './ss7_service_router/dictionary/dictionary/dictionary.component';
-import { DictionaryDetailComponent } from './ss7_service_router/dictionary/dictionary-detail/dictionary-detail.component';
-import { ProductListComponent } from './ss7_service_router/product/product-list/product-list.component';
-import { ProductCreateComponent } from './ss7_service_router/product/product-create/product-create.component';
+import {Ss5CountdownComponent} from './ss5_compenent_interaction/ss5-countdown/ss5-countdown.component';
+import {StudentComponent} from './ss5_compenent_interaction/ss5_student/student/student.component';
+import {StudentDetailComponent} from './ss5_compenent_interaction/ss5_student/student-detail/student-detail.component';
+import {StudentCreateComponent} from './ss5_compenent_interaction/ss5_student/student-create/student-create.component';
+import {Ss6RegisterComponent} from './ss6_angular_form/ss6-register/ss6-register.component';
+import {DictionaryComponent} from './ss7_service_router/dictionary/dictionary/dictionary.component';
+import {DictionaryDetailComponent} from './ss7_service_router/dictionary/dictionary-detail/dictionary-detail.component';
+import {ProductListComponent} from './ss7_service_router/product/product-list/product-list.component';
+import {ProductCreateComponent} from './ss7_service_router/product/product-create/product-create.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ProductEditComponent } from './ss7_service_router/product/product-edit/product-edit.component';
+import { ProductDeleteComponent } from './ss7_service_router/product/product-delete/product-delete.component';
 
 
 @NgModule({
@@ -36,15 +39,19 @@ import { ProductCreateComponent } from './ss7_service_router/product/product-cre
     DictionaryComponent,
     DictionaryDetailComponent,
     ProductListComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    ProductEditComponent,
+    ProductDeleteComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

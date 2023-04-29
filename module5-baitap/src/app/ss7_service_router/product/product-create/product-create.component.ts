@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
 import {ProductService} from '../service/product.service';
 import {Router} from '@angular/router';
 
@@ -16,14 +16,17 @@ export class ProductCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.rfProduct = new FormGroup({});
+    this.rfProduct = new FormGroup({
+      name: new FormControl('', []),
+      price: new FormControl('', []),
+      description: new FormControl('', []),
+    });
   }
 
   addProduct() {
-    debugger
-    console.log(this.rfProduct.value);
-    this.productService.save(this.rfProduct.value);
-
-    this.router.navigateByUrl('/product');
+    this.productService.save(this.rfProduct.value).subscribe(next => {
+      this.router.navigateByUrl('/product');
+    }, error => {
+    }, () => {});
   }
 }
