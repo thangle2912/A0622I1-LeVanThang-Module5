@@ -1,0 +1,32 @@
+<!DOCTYPE html >
+<html lang="en">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/custom.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header>
+</header>
+
+
+</body>
+<script>
+    fetch("../header.html")
+        .then(response => {
+            return response.text()
+        })
+        .then(data => {
+            document.querySelector("header").innerHTML = data;
+        });
+
+    fetch("./footer.html")
+        .then(response => {
+            return response.text()
+        })
+        .then(data => {
+            document.querySelector("footer").innerHTML = data;
+        });
+</script>
+</html>

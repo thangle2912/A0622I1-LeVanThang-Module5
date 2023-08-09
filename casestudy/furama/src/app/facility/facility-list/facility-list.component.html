@@ -1,0 +1,98 @@
+<div class="container-fluid">
+
+  <h1 style="text-align: center">Danh sách dịch vụ</h1>
+
+
+  <div class="row" style="margin: 10px">
+
+    <div class="col-2">
+      <!--      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createModal">-->
+      <button type="button" class="btn btn-success" routerLink="/facility/create">
+        Thêm mới dịch vụ
+      </button>
+    </div>
+    <div class="col-2">
+      <select class="form-select" aria-label="Default select example" name="idFacilityType">
+        <option value="">Tất cả</option>
+        <option *ngFor="let facilityType of facilityTypes" value="{{facilityType.id}}">{{facilityType.name}}</option>
+      </select>
+    </div>
+    <div class="col-5">
+      <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control" placeholder="Nhập tên dịch vụ" name="searchName">
+      </div>
+    </div>
+    <div class="col-3">
+      <button type="submit" class="btn btn-light ">Tìm kiếm</button>
+
+    </div>
+
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let facility of facilities">
+      <div class="card h-100">
+        <img width="370px" height="240px"
+             src="https://furamavietnam.com/wp-content/uploads/2018/03/Vietnam_Danang_Furama_Ocean-Suite-Feature-768x497.jpg"
+             class="card-img-top" alt="picture">
+        <div class="card-body" style="align-self: center;">
+          <h5 class="card-title">{{facility.name | titlecase}}</h5>
+          <p class="card-text">
+            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#detailFacility">
+              Xem nội dung
+            </button>
+          </p>
+          <div class="button-mg5">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                    data-bs-target="#deleteModal" (click)="getFacilityDelete(facility)"> Xoá
+            </button>
+            <button class="btn btn-warning" routerLink="/facility/edit/{{facility.id}}">Cập nhật
+            </button>
+            <input name="idDelete" class="form-check-input" type="checkbox">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="modal fade" id="detailFacility" data-bs-backdrop="static" data-bs-keyboard="false"
+       tabindex="-1" aria-labelledby="detailStaticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailStaticBackdropLabel">Sa thải nhân viên</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bạn có muốn xoá : <span></span> ?
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--    Modal delete-->
+  <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false"
+       tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Xoá dịch vụ</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bạn có muốn xoá : <span *ngIf="facilityDelete"> {{facilityDelete.name}}</span> ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteFacility()">Xoá</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

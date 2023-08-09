@@ -1,0 +1,111 @@
+<div class="container">
+  <button type="button" class="btn btn-link" routerLink="/customer">Quay lại</button>
+  <div style="text-align: center">
+    <h1>Thêm mới dịch vụ</h1>
+  </div>
+  <form novalidate [formGroup]="rfCustomer">
+    <div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên Khách hàng</label>
+          <input type="text" #name class="form-control" id="name" formControlName="name">
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.name?.touched && rfCustomer.controls.name?.errors?.required">Bắt buộc nhập.</p>
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.name.hasError('pattern')"> Name: Nguyen Van A</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="birthday" class="form-label">Ngày sinh</label>
+          <input type="date" #birthday class="form-control" id="birthday" formControlName="birthday">
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.birthday?.touched && rfCustomer.controls.birthday?.errors?.required">Bắt buộc
+            nhập.</p>
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.birthday.hasError('ageError')"> Age >= 18</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="gender" class="form-label">Khách hàng loại</label>
+          <select class="form-select" aria-label=".form-select-lg example" id="gender" formControlName="gender">
+            <option value="">-- Chọn --</option>
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+          </select>
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.gender?.touched && rfCustomer.controls.gender?.errors?.required">Bắt buộc nhập.</p>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="idCard" class="form-label">CMND hoặc CCCD</label>
+          <input type="number" #idCard class="form-control" id="idCard" formControlName="idCard">
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.idCard?.touched && rfCustomer.controls.idCard?.errors?.required">Bắt buộc nhập.</p>
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.idCard?.touched && rfCustomer.controls.idCard?.errors?.pattern">
+             Sai định dạng
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="customerType" class="form-label">Khách hàng loại</label>
+          <select class="form-select" aria-label=".form-select-lg example"
+                  id="customerType" formControlName="customerType">
+            <option *ngFor="let customerType of customerTypeList"
+                    [ngValue]="customerType">{{customerType.name}}</option>
+          </select>
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.customerType?.touched && rfCustomer.controls.customerType?.errors?.required">Bắt buộc nhập.</p>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label">Số điện thoại</label>
+          <input type="number" #phoneNumber class="form-control" id="phoneNumber" formControlName="phoneNumber">
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.phoneNumber?.touched && rfCustomer.controls.phoneNumber?.errors?.required">Bắt buộc nhập.</p>
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.phoneNumber?.touched && rfCustomer.controls.phoneNumber?.errors?.pattern">
+            Sai định dạng
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="text" #email class="form-control" id="email"
+                 formControlName="email">
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.email?.touched && rfCustomer.controls.email?.errors?.required">Bắt buộc nhập.</p>
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.email?.touched && rfCustomer.controls.email?.errors?.pattern">
+            Email sai định dạng
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="address" class="form-label">Địa chỉ</label>
+          <input type="text"  class="form-control" id="address" formControlName="address">
+          <p class="text-danger padding-5"
+             *ngIf="rfCustomer.controls.address?.touched && rfCustomer.controls.address?.errors?.required">Bắt buộc nhập.</p>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <button [disabled]="rfCustomer.invalid" (click)="addCustomer()" type="submit" class="btn btn-primary">Thêm mới
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

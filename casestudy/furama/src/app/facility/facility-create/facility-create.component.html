@@ -1,0 +1,92 @@
+<div class="container">
+  <button type="button" class="btn btn-link" routerLink="/facility">Quay lại</button>
+  <div style="text-align: center">
+    <h1>Thêm mới dịch vụ</h1>
+  </div>
+  <form novalidate [formGroup]="rfFacility" (ngSubmit)="addFacility()">
+    <div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="facilityType" class="form-label">Loại dịch vụ</label>
+          <select #facilityType class="form-select" aria-label=".form-select-lg example"
+                  id="facilityType" formControlName="facilityType">
+            <option *ngFor="let facilityType of facilityTypes"
+                  [ngValue]="facilityType"  >{{facilityType.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên dịch vụ</label>
+          <input type="text" #name class="form-control" id="name" formControlName="name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="area" class="form-label">Diện tích sử dụng</label>
+          <input type="number" #area class="form-control" id="area" formControlName="area">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="cost" class="form-label">Chi phí thuê</label>
+          <input type="number" #cost class="form-control" id="cost" formControlName="cost">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="maxPeople" class="form-label">Số lượng người tối đa</label>
+          <input type="number" #maxPeople class="form-control" id="maxPeople" formControlName="maxPeople">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="rentType" class="form-label">Kiểu thuê</label>
+          <select #rentType class="form-select" aria-label=".form-select-lg example"
+                  id="rentType" formControlName="rentType">
+            <option *ngFor="let rentType of rentTypes" [ngValue]="rentType">{{rentType.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="standardRoom" class="form-label">Tiêu chuẩn phòng</label>
+          <input type="text" #standardRoom class="form-control" id="standardRoom" formControlName="standardRoom">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="descriptionOtherConvenience" class="form-label">Mô tả tiện nghi khác</label>
+          <input type="text" #descriptionOtherConvenience class="form-control" id="descriptionOtherConvenience"
+                 formControlName="descriptionOtherConvenience">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="poolArea" class="form-label">Diện tích hồ bơi</label>
+          <input type="number" #poolArea class="form-control" id="poolArea" formControlName="poolArea">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="numberOfFloors" class="form-label">Số tầng</label>
+          <input type="number" #numberOfFloors class="form-control" id="numberOfFloors"
+                 formControlName="numberOfFloors">
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="numberOfFloors" class="form-label">Dịch vụ miễn phí</label>
+          <input type="text" #facilityFree class="form-control" id="facilityFree" formControlName="facilityFree">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button [disabled]="rfFacility.invalid" type="submit" class="btn btn-primary">Thêm mới
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

@@ -1,0 +1,235 @@
+{
+  "customers": [
+    {
+      "name": "Thắng Lê",
+      "birthday": "2000-12-29",
+      "gender": "0",
+      "idCard": "19283123",
+      "phoneNumber": 915337366,
+      "email": "thangle2912@gmail.com",
+      "address": "NO",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "id": 1
+    },
+    {
+      "name": "Thắng Lee",
+      "birthday": "2009-12-29",
+      "gender": "1",
+      "idCard": "19283123",
+      "phoneNumber": "12312313",
+      "email": "thangle2912@gmail.com",
+      "address": "Quảng trị",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 2
+    },
+    {
+      "name": "lee",
+      "birthday": "2017-05-11",
+      "gender": "1",
+      "idCard": 11111111111,
+      "phoneNumber": 916337366,
+      "email": "thangle2912@gmail.com",
+      "address": "NO",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "id": 3
+    },
+    {
+      "name": "Thắng Lê",
+      "birthday": "2023-05-05",
+      "gender": "0",
+      "idCard": 11111111111,
+      "phoneNumber": 915337366,
+      "email": "thangle2912@gmail.com",
+      "address": "NO",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 4
+    },
+    {
+      "name": "Thắng Lê",
+      "birthday": "2023-05-19",
+      "gender": "0",
+      "idCard": 11111111111,
+      "phoneNumber": 915337366,
+      "email": "thangle2912@gmail.com",
+      "address": "NO",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 5
+    },
+    {
+      "name": "Thang",
+      "birthday": "2004-01-06",
+      "gender": "1",
+      "idCard": 111111111,
+      "phoneNumber": 84916337366,
+      "email": "thangle2912@gmail.com",
+      "address": "NO",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "id": 6
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "rentTypes": [
+    {
+      "id": 1,
+      "name": "Năm"
+    },
+    {
+      "id": 2,
+      "name": "Tháng"
+    },
+    {
+      "id": 3,
+      "name": "Ngày"
+    },
+    {
+      "id": 4,
+      "name": "Giờ"
+    }
+  ],
+  "facilityTypes": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "facilities": [
+    {
+      "id": 1,
+      "name": "Villa Beach Front",
+      "area": 25000,
+      "cost": 10000000,
+      "maxPeople": 10,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenienceRoom": "Có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 3,
+      "facilityFree": "Không có",
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "rentType": {
+        "id": 1,
+        "name": "Năm"
+      }
+    },
+    {
+      "id": 2,
+      "name": "House Princess 01",
+      "area": 15000,
+      "cost": 7000000,
+      "maxPeople": 7,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenienceRoom": "Có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 3,
+      "facilityFree": "Không có",
+      "facilityType": {
+        "id": 2,
+        "name": "House"
+      },
+      "rentType": {
+        "id": 2,
+        "name": "Tháng"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Room Twin 01",
+      "area": 10000,
+      "cost": 40000000,
+      "maxPeople": 4,
+      "poolArea": 500,
+      "facilityFree": "Không có",
+      "facilityType": {
+        "id": 3,
+        "name": "Room"
+      },
+      "rentType": {
+        "id": 3,
+        "name": "Ngày"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Room Twin 01",
+      "area": 10000,
+      "cost": 40000000,
+      "maxPeople": 4,
+      "poolArea": 500,
+      "facilityFree": "Không có",
+      "facilityType": {
+        "id": 3,
+        "name": "Room"
+      },
+      "rentType": {
+        "id": 4,
+        "name": "Giờ"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Room Twin 01",
+      "area": 10000,
+      "cost": 40000000,
+      "maxPeople": 4,
+      "poolArea": 500,
+      "facilityFree": "Không có",
+      "facilityType": {
+        "id": 3,
+        "name": "Room"
+      },
+      "rentType": {
+        "id": 1,
+        "name": "Năm"
+      }
+    }
+  ]
+}
